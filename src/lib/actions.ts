@@ -18,3 +18,11 @@ export async function handleSubmission(previousState: Position | null, formData:
 		});
 	return position;
 }
+
+export async function lookupWeather(position: Position) {
+	const weather: object = await fetch(
+		`https://api.openweathermap.org/data/2.5/weather?lat=${position.lat}&lon=${position.lon}&appid=${process.env.API_KEY}&units=metric`
+	).then(response => response.json());
+
+	return weather;
+}

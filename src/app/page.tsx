@@ -18,9 +18,13 @@ export default function Home() {
 			<main className="flex flex-col flex-auto grow justify-center items-stretch gap-6">
 				<h1 className="text-5xl">WeatherSearch</h1>
 				<Search onSearch={setPosition} />
-				{/* <Suspense fallback={<InfoPanelSkeleton />}>
-					<InfoPanel />
-				</Suspense> */}
+				{position != null ? (
+					<Suspense fallback={<InfoPanelSkeleton />}>
+						<InfoPanel location={position} />
+					</Suspense>
+				) : (
+					<></>
+				)}
 			</main>
 			<footer className="bg-green-100 ">
 				{/* <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">
