@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Position } from '@/lib/types';
 import { lookupWeather } from '@/lib/actions';
 import { useEffect, useState } from 'react';
+import { getCountryData, getEmojiFlag } from 'countries-list';
 
 export default function InfoPanel({ location }: { location: Position }) {
 	const [imageSource, setImageSource] = useState('');
@@ -34,7 +35,7 @@ export default function InfoPanel({ location }: { location: Position }) {
 	return (
 		<div className="flex flex-wrap gap-4 p-6 justify-around items-stretch content-center shadow-container">
 			<h2 className="z-10 basis-full text-center text-2xl">
-				{location.name}, {location.country}
+				{location.name}, {getCountryData(location.country).name} {getEmojiFlag(location.country)}
 			</h2>
 			<div className="basis-[30%] h-28 shadow-btn flex justify-center items-center">
 				<Image

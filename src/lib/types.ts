@@ -1,6 +1,8 @@
+import { TCountryCode } from 'countries-list';
+
 export type Position = {
 	name: string;
-	country: string;
+	country: TCountryCode;
 	lat: number;
 	lon: number;
 };
