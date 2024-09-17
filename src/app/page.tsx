@@ -4,14 +4,10 @@ import InfoPanel from '@/components/infoPanel';
 import Search from '@/components/search';
 import InfoPanelSkeleton from '@/components/skeletons/infoPanelSkeleton';
 import { Position } from '@/lib/types';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useState } from 'react';
 
 export default function Home() {
 	const [position, setPosition] = useState<Position | null>(null);
-
-	useEffect(() => {
-		console.log(JSON.stringify(position));
-	}, [position]);
 
 	return (
 		<div className="flex flex-col items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">

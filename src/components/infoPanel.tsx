@@ -13,7 +13,6 @@ export default function InfoPanel({ location }: { location: Position }) {
 
 	const loadInfo = async (location: Position) => {
 		await lookupWeather(location).then(weather => {
-			console.log(JSON.stringify(weather));
 			setImageSource(weather.weather[0].icon);
 			setTemperature(weather.main.temp);
 			setWeatherCondition(weather.weather[0].description);
