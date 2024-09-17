@@ -29,9 +29,6 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
-			<a href="https://www.flaticon.com/free-icons/weather" title="weather icons">
-				Weather icons created by Freepik - Flaticon
-			</a>
 		</html>
 	);
 }
