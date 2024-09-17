@@ -34,10 +34,34 @@ body {
 		-10px -10px 20px #ffffff;
 }
 
+.shadow-btn-click {
+	border-radius: 20px;
+	background: #e0e0e0;
+	box-shadow:
+		inset 10px 10px 20px #949494,
+		inset -10px -10px 20px #ffffff;
+}
+
 .shadow-container {
 	border-radius: 30px;
 	background: #e0e0e0;
 	box-shadow:
 		inset 5px 5px 10px #898989,
 		inset -5px -5px 10px #ffffff;
+}
+
+.shadow-input {
+	border-radius: 30px;
+	background: #e0e0e0;
+	box-shadow:
+		inset 5px 5px 10px #bebebe,
+		inset -5px -5px 10px #ffffff;
+}
+
+.shadow-title {
+	border-radius: 30px;
+	background: #e0e0e0;
+	box-shadow:
+		inset 10px 10px 20px #bebebe,
+		inset -10px -10px 20px #ffffff;
 }

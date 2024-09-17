@@ -16,7 +16,9 @@ export default function Home() {
 	return (
 		<div className="flex flex-col items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
 			<main className="flex flex-col flex-auto grow justify-center items-stretch gap-6">
-				<h1 className="text-5xl">WeatherSearch</h1>
+				<div className="self-center shadow-title p-4">
+					<h1 className="text-5xl text-center">WeatherSearch</h1>
+				</div>
 				<Search onSearch={setPosition} />
 				{position != null ? (
 					<Suspense fallback={<InfoPanelSkeleton />}>

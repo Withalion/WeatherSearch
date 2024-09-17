@@ -21,8 +21,14 @@ export default function InfoPanel({ location }: { location: Position }) {
 		});
 	};
 
+	const changeStyle = () => {
+		const btn = document.getElementById('submitBtn');
+		btn?.classList.remove('shadow-btn-click');
+	};
+
 	useEffect(() => {
 		loadInfo(location);
+		changeStyle();
 	}, [location]);
 
 	return (
