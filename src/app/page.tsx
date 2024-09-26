@@ -8,6 +8,7 @@ import { Suspense, useState } from 'react';
 
 export default function Home() {
 	const [position, setPosition] = useState<Position | null>(null);
+	const [submitBtnClicked, setSubmitBtnClicked] = useState(false);
 
 	return (
 		<div className="flex flex-col items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
@@ -15,10 +16,14 @@ export default function Home() {
 				<div className="self-center shadow-title p-4">
 					<h1 className="text-5xl text-center">WeatherSearch</h1>
 				</div>
-				<Search onSearch={setPosition} />
+				<Search
+					onSearch={setPosition}
+					isSubmitted={submitBtnClicked}
+					submitChange={setSubmitBtnClicked}
+				/>
 				{position != null ? (
 					<Suspense fallback={<InfoPanelSkeleton />}>
-						<InfoPanel location={position} />
+						<InfoPanel location={position} submitChange={setSubmitBtnClicked} />
 					</Suspense>
 				) : (
 					<></>

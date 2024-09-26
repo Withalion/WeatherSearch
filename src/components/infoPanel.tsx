@@ -1,10 +1,16 @@
 import Image from 'next/image';
 import { Position } from '@/lib/types';
 import { lookupWeather } from '@/lib/actions';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { getCountryData, getEmojiFlag } from 'countries-list';
 
-export default function InfoPanel({ location }: { location: Position }) {
+export default function InfoPanel({
+	location,
+	submitChange,
+}: {
+	location: Position;
+	submitChange: Dispatch<SetStateAction<boolean>>;
+}) {
 	const [imageSource, setImageSource] = useState('');
 	const [temperature, setTemperature] = useState(0);
 	const [weatherCondition, setWeatherCondition] = useState('');
@@ -22,8 +28,7 @@ export default function InfoPanel({ location }: { location: Position }) {
 	};
 
 	const changeStyle = () => {
-		const btn = document.getElementById('submitBtn');
-		btn?.classList.remove('shadow-btn-click');
+		submitChange(false);
 	};
 
 	useEffect(() => {
