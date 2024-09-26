@@ -11,8 +11,8 @@ export default function InfoPanel({ location }: { location: Position }) {
 	const [humidity, setHumidity] = useState(0);
 	const [windSpeed, setWindSpeed] = useState(0);
 
-	const loadInfo = async (location: Position) => {
-		await lookupWeather(location).then(weather => {
+	const loadInfo = (location: Position) => {
+		lookupWeather(location).then(weather => {
 			setImageSource(weather.weather[0].icon);
 			setTemperature(weather.main.temp);
 			setWeatherCondition(weather.weather[0].description);
