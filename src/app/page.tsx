@@ -11,7 +11,7 @@ export default function Home() {
 	const [submitBtnClicked, setSubmitBtnClicked] = useState(false);
 
 	return (
-		<div className="flex flex-col items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
+		<div className="flex flex-col items-center justify-items-center min-h-screen">
 			<main className="flex flex-col flex-auto grow justify-center items-stretch gap-6">
 				<div className="self-center shadow-title p-4">
 					<h1 className="text-5xl text-center">WeatherSearch</h1>
